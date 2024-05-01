@@ -52,21 +52,21 @@ This project is implemented using the prefix-tree data structure
 + treef.pas: contains the implementation of the prefix-tree data structure
 
 + inputf.pas: handles the user input on the command line depends on the files:
-    + lexerf.pas: for lexing the user input (more about lexing  (click here)[https://www.geeksforgeeks.org/introduction-of-lexical-analysis/])
+    + lexerf.pas: for lexing the user input (more about lexing  [click here](https://www.geeksforgeeks.org/introduction-of-lexical-analysis/))
 
-    + tokenizerf.pas: for tokenizing the user input (more about tokenizing (click here)[https://www.geeksforgeeks.org/nlp-how-tokenizing-text-sentence-words-works/])
+    + tokenizerf.pas: for tokenizing the user input (more about tokenizing [click here](https://www.geeksforgeeks.org/nlp-how-tokenizing-text-sentence-words-works/))
 
-    + parserf.pas: for parsing the user input and generating output (more about parsing (click here)[https://www.geeksforgeeks.org/introduction-of-parsing-ambiguity-and-parsers-set-1/])
+    + parserf.pas: for parsing the user input and generating output (more about parsing [click here](https://www.geeksforgeeks.org/introduction-of-parsing-ambiguity-and-parsers-set-1/))
     
     + clickf.pas: for collecting the data from the user on the command line
 
     + errorf.pas: for the error handling
 
-+ bufferf.pas: implements the buffer data structure (more about the buffer data structure (click here)[https://www.geeksforgeeks.org/gap-buffer-data-structure/])
++ bufferf.pas: implements the buffer data structure (more about the buffer data structure [click here](https://www.geeksforgeeks.org/gap-buffer-data-structure/))
 
-+ queuef.pas: implements the queue data structure (more about the queue data structure (click here)[https://geeksforgeeks.org/queue-data-structure/])
++ queuef.pas: implements the queue data structure (more about the queue data structure [click here](https://geeksforgeeks.org/queue-data-structure/))
 
-+ string_viewf.pas: implements the string view data structure (more about the string view data structure (click here)[https://www.geeksforgeeks.org/class-stdstring_view-in-cpp-17/])
++ string_viewf.pas: implements the string view data structure (more about the string view data structure [click here](https://www.geeksforgeeks.org/class-stdstring_view-in-cpp-17/))
 
 + main.pas: the main file, it generates the project output!
 
@@ -77,7 +77,7 @@ Follow these instructions to compile and run the programs:
 
 ### Prerequisites
 
-- **FREE PASCAL COMPILER**: Make sure you have **fpc** installed to compile the **PASCAL** programs.
+- **FREE PASCAL COMPILER**: Make sure you have **fpc** installed to compile the [**PASCAL**](https://www.freepascal.org/) programs.
 
 ### Compilation
 
@@ -87,6 +87,8 @@ To compile the programs, use the following commands in your terminal:
 $ cd bin
 $ ./build.sh
 ```
+
+
 ## Usage
 
 #### EXECTUING
@@ -94,6 +96,9 @@ After compiling, run the programs as follows:
 ```bash
 $ ./run.sh
 ```
+
+#
+
 
 #### COMMANDS
 
@@ -108,9 +113,19 @@ COMMANDS:
                   options: 
                         -c                   : set the files directory!
                         -g                   : set the graph directory!
-           :graph <filename>                 : outputs a file that contains source code for the tree generation! (use [graphviz](https://edotor.net/))
+           :graph <filename>                 : outputs a file that contains source code for the tree generation!)
 
 ```
+
+#
+
+#### GRAPH GENERATION
+
+For graph generation you can use:  [**graphviz**](https://edotor.net/)
+
+just copy the source code of the graph and put it there and it will generate a graph representation of the tree made by the words entered by you!
+
+#
 
 
 
