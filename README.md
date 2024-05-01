@@ -113,7 +113,7 @@ COMMANDS:
                   options: 
                         -c                   : set the files directory!
                         -g                   : set the graph directory!
-           :graph <filename>                 : outputs a file that contains source code for the tree generation!)
+           :graph <filename>                 : outputs a file that contains source code for the tree generation!
 
 ```
 
@@ -125,6 +125,9 @@ For graph generation you can use:  [**graphviz**](https://edotor.net/)
 
 just copy the source code of the graph and put it there and it will generate a graph representation of the tree made by the words entered by you!
 
+
+##### GRAPH EXEMPLE 
+  ![image.png](/assets/graph_exemple.png)
 #
 
 
