@@ -49,7 +49,7 @@ This project is implemented using the prefix-tree data structure
 
 ### FILES:
 
-+ treef.pas: contains the implementation of the prefix-tree data structure
++ treef.pas: contains the implementation of the prefix-tree data structure (more about the prefix-tree data structure [click here](https://en.wikipedia.org/wiki/Trie))
 
 + inputf.pas: handles the user input on the command line depends on the files:
     + lexerf.pas: for lexing the user input (more about lexing  [click here](https://www.geeksforgeeks.org/introduction-of-lexical-analysis/))
