@@ -1,44 +1,25 @@
-uses CRT, STACKF, CLICK_HANDLER;
+uses TOKENIZERF, STRING_VIEWF;
 
 procedure main();
 
-    var st: stack_t;
+    var input: string;
+        sv: sv_t;
+        tokens: token_list;
 
     begin
-        st := stack_init();
-
-        write('> ');
-
         repeat
-            if (KEYPRESSED) then 
-                begin 
-                    clrscr();
-                    write('> ');
-                    handle_click(st);
-                    writeln(stack_to_string(st));
+            write('> ');
+            readln(input);
+            if (input <> 'q') then 
+                begin
+                    sv := sv_create(input);
+                    tokens := get_tokens(sv);
+                    tokens_write(tokens);
+                    token_list_remove(tokens); 
+                    sv_remove(sv);
                 end;
-        until(user_click.CLICK_CHAR = #13);
-
-        stack_remove(st);
+        until (input = 'q'); 
     end;
-
-// uses CRT;
-
-// procedure main();
-
-//     var c: char;
-
-//     begin
-//         c := 'a';
-
-//         repeat
-//             if (KEYPRESSED) then 
-//                 begin 
-//                     c := readkey();
-//                     writeln(ord(c));
-//                 end;
-//         until (c = 'q'); 
-//     end;
 
 begin
     main();

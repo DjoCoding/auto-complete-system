@@ -1,7 +1,7 @@
 unit QUEUEF;
 
 interface
-
+    
     uses TREEF;
 
     const MAX_SIZE = 100;

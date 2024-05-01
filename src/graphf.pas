@@ -39,9 +39,11 @@ procedure get_graph(file_path: string);
     begin
         assign(stream, file_path);
         open_file(stream, 'w');
+
         writeln(stream, 'GRAPH {');
         get_graph(stream);
         writeln(stream, '}');
+        
         close(stream);
     end;
 

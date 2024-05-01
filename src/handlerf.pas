@@ -1,8 +1,8 @@
 unit HANDLERF;
 
 interface
-
-    uses CRT, TREEF, STACKF, CLICK_HANDLER;
+    
+    uses HANDLE_INPUT, CRT, TREEF, STACKF, CLICK_HANDLER;
 
     procedure run();
 
@@ -15,24 +15,28 @@ procedure run();
         input: string;
 
     begin
-        input := '';
+        // initializing 
+        root_init();
         st := stack_init();
+        input := '';
 
         write('> ');
-
         repeat
             if (KEYPRESSED) then 
                 begin 
                     clrscr();
                     write('> ');
+
                     handle_click(st);
-                    input := stack_to_string(st);
-                    writeln(input);
-                    dfs_prefix(input);
+
+                    handle_user_input(st);
                 end;
+
         until(user_click.CLICK_CHAR = #13);
 
+        // freeing the memory
         stack_remove(st);
+        root_remove();
     end;
 
 
