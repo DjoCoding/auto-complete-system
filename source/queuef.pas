@@ -4,7 +4,7 @@ interface
     
     uses TREEF;
 
-    const MAX_SIZE = 100;
+    const MAX_SIZE = 1000;
 
     type 
         queue_type = record 

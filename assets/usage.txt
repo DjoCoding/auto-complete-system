@@ -1,0 +1,12 @@
+COMMANDS:
+           :add <filename>*                  : to add one or more files to the tree!
+           :show  !<options>                 : show all the words available in the tree!
+                  options: 
+                       -dir                  : show the current directory for the files!
+                       -gdir                 : show the directory where the graphs are located!
+           :dir <option> <dirname>           : to set the directory in which the files exists!
+                  options: 
+                        -c                   : set the files directory!
+                        -g                   : set the graph directory!
+           :graph <filename>                 : outputs a file that contains source code for the tree generation! (use graphics)
+

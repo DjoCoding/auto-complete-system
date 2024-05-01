@@ -2,7 +2,7 @@ unit TREEF;
 
 interface   
 
-    uses STACKF, PFILE; 
+    uses BUFFERF, PFILE; 
 
     type node_t = ^node_type;
         node_type = record 
@@ -111,7 +111,7 @@ function get_prefix_in_tree(prefix: string): node_t;
     end;
 
 
-procedure dfs(st: stack_t; node: node_t);
+procedure dfs(buffer: buffer_t; node: node_t);
 
     var current: node_t;
 
@@ -122,14 +122,14 @@ procedure dfs(st: stack_t; node: node_t);
 
         while (current <> NIL) do 
             begin
-                push(st, current^.value);
+                push(buffer, current^.value);
                 
                 if (current^.is_end) then 
-                    write_stack(st);
+                    write_buffer(buffer);
                 
-                dfs(st, current);
+                dfs(buffer, current);
 
-                pop(st);
+                pop(buffer);
 
                 current := current^.next_node; 
             end;
@@ -137,27 +137,27 @@ procedure dfs(st: stack_t; node: node_t);
 
 procedure dfs_root();
 
-    var st: stack_t; 
+    var buffer: buffer_t; 
 
     begin 
-        st := stack_init();
-        dfs(st, root);
+        buffer := buffer_init();
+        dfs(buffer, root);
         writeln();
-        stack_remove(st);
+        buffer_remove(buffer);
     end;
 
 procedure dfs_prefix(prefix: string);
 
-    var st: stack_t;
+    var buffer: buffer_t;
         node: node_t;
 
     begin
         node := get_prefix_in_tree(prefix);
-        st := stack_init();
+        buffer := buffer_init();
 
-        push_string(st, prefix);
-        dfs(st, node);
-        stack_remove(st);
+        push_string(buffer, prefix);
+        dfs(buffer, node);
+        buffer_remove(buffer);
     end;
 
 procedure remove_sub_tree(node: node_t);
@@ -175,8 +175,6 @@ procedure remove_sub_tree(node: node_t);
                 dispose(current);
                 current := next; 
             end;
-        
-        writeln('[TREEF] SUB TREE REMOVED!');
     end;
 
 procedure root_remove();

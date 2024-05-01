@@ -1,8 +1,8 @@
-unit CLICK_HANDLER;
+unit CLICKF;
 
 interface
 
-    uses STACKF, CRT;
+    uses BUFFERF, CRT;
 
     type 
         CLICK_TYPE = (NO_CLICK, CLICK);
@@ -13,7 +13,7 @@ interface
         end;
 
     procedure get_click();
-    procedure handle_click(st: stack_t);
+    procedure handle_click(buffer: buffer_t);
 
     var user_click: CLICK_T;
 
@@ -41,7 +41,7 @@ procedure get_click();
             on_not_click();
     end;
 
-procedure handle_click(st: stack_t);
+procedure handle_click(buffer: buffer_t);
 
     begin
         get_click();
@@ -49,9 +49,12 @@ procedure handle_click(st: stack_t);
         if (user_click.C_TYPE = CLICK) then 
             case user_click.CLICK_CHAR of 
                 #8:    
-                    pop(st);
+                    pop(buffer);
+                #13:
+                    begin 
+                    end;
                 else 
-                    push(st, user_click.CLICK_CHAR);
+                    push(buffer, user_click.CLICK_CHAR);
             end;
     end;
 
